@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Preloaders | @rohit_virkud</title>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <link href="https://fonts.googleapis.com/css?family=Modak|Montserrat&display=swap" rel="stylesheet">
+    <style type="text/css">
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body{font-family: 'Montserrat', sans-serif;}
+      .loader-wrapper
+      {
+        width: 100%;
+        min-height: 100vh;
+        position: fixed;
+        top: 0;
+        left:0;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+        z-index: 9999;
+      }
+      .loadinText{
+        animation: fadeIn 1s linear forwards;
+        animation-delay: 1s;
+        opacity: 0;
+      }
+      .loaderline
+      {
+        width: 50%;
+        height: 5px;
+        border-top: 1px solid black;
+        background-color: transparent;
+        animation: fadeIn 1s linear forwards;
+        animation: LineCountdown 2s linear infinite;
+        animation-delay: 1s;
+        opacity: 0.5;
+        
+      }
+ 
+      .spinner
+      {
+        width: 7rem;
+        height: 7rem;
+        display: inline-block;
+        border:3px solid #ddd;
+        border-radius: 50%;
+        border-top-color: black;
+        margin-bottom: 5rem;
+        animation: 1s spin infinite ease-in-out;
+      }
+       
+
+    .loading-dots > div{
+        width: 2rem;
+        height: 2rem;
+        background-color: black;
+        border-radius: 50%;
+        display: inline-block;
+        animation: 1s bounce infinite ease-in-out both;
+       }
+       .loading-dots .bounce
+       {
+        animation-delay: -0.30s;
+
+       }
+        .loading-dots .bounce2
+       {
+         animation-delay: -0.15;
+       }
+
+
+
+   .jumping-dots > div{
+        width: 2rem;
+        height: 2rem;
+        background-color: black;
+        display: inline-block;
+        animation: 1s jump infinite ease-in-out both;
+       
+        }
+
+
+
+         .jumping-dots .dot1
+         {
+    animation-delay: 1s;
+         }
+
+
+          .jumping-dots .dot2
+         {
+    animation-delay: 1.5s;
+         }
+
+
+           .jumping-dots .dot3
+         {
+    animation-delay: 2s;
+         }
+
+
+
+
+ @keyframes fadeIn
+        {
+          0%
+          {
+              opacity: 0;
+          }
+          100%
+          {
+               opacity: 1;
+          }
+        }
+
+   @keyframes LineCountdown
+        {
+          0%
+          {
+              width:  0%;
+              opacity: 0.5;
+          }
+          100%
+          {
+               width:  50%;
+               opacity: 1;
+          }
+        }
+
+
+        @keyframes spin
+       {
+        to{
+          transform: rotate(360deg);
+        }
+       }
+
+
+       @keyframes bounce
+       {
+        0%,80%,100%{
+          transform: scale(0);
+        }
+        40%{
+          transform: scale(1);
+        }
+       }
+
+        @keyframes jump
+       {
+        0%{
+          transform: translateY(0);
+        }
+        50%{
+          transform: translateY(50px);
+        }
+        100%
+        {
+          transform: translateY(0px);
+        }
+       }
+
+
+
+
+    </style>
+</head>
+<body> <!-- use onload function when you use these preloaders into your project  -->
+<div class="loader-wrapper"> <!-- simply a container class -->
+
+
+  <center><span class="loadinText">Loading...</span></center> <!-- Loading text -->
+          <div class="loaderline"></div><br> <!-- The line under the text -->
+
+
+
+
+
+<div class="spinner"></div> <!-- round circular preloader -->
+
+
+
+  
+<div class="loading-dots">    <!-- loading dots preloader -->
+   <div class="bounce"></div>
+   <div class="bounce2"></div>
+   <div class="bounce3"></div>
+</div>
+
+
+
+
+<div class="jumping-dots" style="margin-top: 50px;"> <!-- jumping dots or squares preloader -->
+   <div class="dot1" style="background-color: green;"></div>
+   <div class="dot2" style="background-color: red;"></div>
+   <div class="dot3" style="background-color: yellow;"></div>
+</div>
+
+
+
+<div class="footer" style="padding-top: 10px;margin-top: 100px;">
+  <center><p style="color: black">made with @ownprofilers</p></center>
+</div>
+
+
+ 
+
+
+
+
+ 
+</body>
+</html>
